@@ -1,6 +1,6 @@
 #Parse Input
 calories = [] #Create 
-with open("Day 1/input.txt", 'r') as fp:
+with open("input.txt", 'r') as fp:
     elf = 0
     for line in fp.readlines():
         cals = line.strip('\n')
