@@ -12,8 +12,11 @@ with open("input.txt", 'r') as fp:
     elf_calories.append(elf)
 
 #Part 1
-print(max(elf_calories)) #Print highest calorie total for the elves.
+print(f'The elf with the most calories is carrying: {max(elf_calories)} calories.') #Print highest calorie total for the elves.
 
 #Part 2
 elf_calories.sort()
-print(sum(elf_calories[:-4:-1])) # Sorts the calories, lowest to highest. Then returns the sum of the last(read highest) 3 elves.
+print(f'The 3 elves with the most calories are carrying a total of {sum(elf_calories[:-4:-1])} calories.') # Sorts the calories, lowest to highest. Then returns the sum of the last(read highest) 3 elves.
+
+#Because my daughter wanted to know how many elves there were.
+print(f'There are a total of {len(elf_calories)} elves.')
