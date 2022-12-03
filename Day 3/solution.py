@@ -1,11 +1,4 @@
-
-# print(duplicates)
-# 97 a | 65 A
-# print(ord('a'))
-# print(ord('z'))
-# print(ord('A'))
-# print(ord('Z'))
-
+# Open file and strip of new lines.
 with open('../../Day 3/input.txt', 'r') as file:
     data = [line.strip('\n') for line in file.readlines()]
 
@@ -14,7 +7,7 @@ duplicates = []
 for line in data:
     dup = None
     size = int(len(line)/2)
-    pack1 = line[:size] 
+    pack1 = line[:size]
     pack2 = line[size:]
 
     for item in pack1:
@@ -22,12 +15,10 @@ for line in data:
             dup = item
     duplicates.append(dup)
 
-
-priority_value = 0
-
-def appraise_value(list):
+#Function to return the appraised value of items in a list.
+def appraise_value(pack):
     appraised_value = 0
-    for item in list:
+    for item in pack:
         item_value = 0
         if ord(item) > 64 and ord(item) < 91:
             item_value += ord(item) - 38
@@ -35,14 +26,10 @@ def appraise_value(list):
             item_value += ord(item) - 96
         else:
             print("Something went wrong")
-        # print(item_value)
         appraised_value += item_value
     return appraised_value
-        
-print(appraise_value(duplicates))
 
 #Part 2
-
 groups = []
 group_count = 0
 elf_count = 1
@@ -57,14 +44,12 @@ for line in data:
         group_count += 1
         elf_count = 1
 
-
 badge_sticker = []
-
 for group in groups:
     for char in group[0]:
         if char in group[1] and char in group[2]:
             badge_sticker.append(char)
             break
 
-print(badge_sticker)
+print(appraise_value(duplicates))
 print(appraise_value(badge_sticker))
