@@ -31,6 +31,9 @@ def check_overlap(pair):
 processed_pairs = list(map(parse_pairs, data))
 subset_pairs = sum(map(check_subset, processed_pairs))
 
+#Part 1 Solution
 print(subset_pairs)
+
 overlaps = list(map(check_overlap, processed_pairs))
+#Part 2 Solution
 print(sum(overlaps))
